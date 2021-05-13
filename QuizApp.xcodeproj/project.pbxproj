@@ -12,6 +12,8 @@
 		2F6359A6264D5D540028BF60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6359A4264D5D540028BF60 /* Main.storyboard */; };
 		2F6359A8264D5D550028BF60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F6359A7264D5D550028BF60 /* Assets.xcassets */; };
 		2F6359AB264D5D550028BF60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6359A9264D5D550028BF60 /* LaunchScreen.storyboard */; };
+		2F6359B4264D67110028BF60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6359B3264D67110028BF60 /* LoginViewController.swift */; };
+		2F6359B7264D6C4C0028BF60 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6359B6264D6C4C0028BF60 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		2F6359A7264D5D550028BF60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F6359AA264D5D550028BF60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F6359AC264D5D550028BF60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F6359B3264D67110028BF60 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2F6359B6264D6C4C0028BF60 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 		2F63599F264D5D540028BF60 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				2F6359B5264D6C370028BF60 /* inscription */,
+				2F6359B2264D66CF0028BF60 /* authentication */,
 				2F6359A0264D5D540028BF60 /* AppDelegate.swift */,
 				2F6359A2264D5D540028BF60 /* ViewController.swift */,
 				2F6359A4264D5D540028BF60 /* Main.storyboard */,
@@ -62,6 +68,22 @@
 				2F6359AC264D5D550028BF60 /* Info.plist */,
 			);
 			path = QuizApp;
+			sourceTree = "<group>";
+		};
+		2F6359B2264D66CF0028BF60 /* authentication */ = {
+			isa = PBXGroup;
+			children = (
+				2F6359B3264D67110028BF60 /* LoginViewController.swift */,
+			);
+			path = authentication;
+			sourceTree = "<group>";
+		};
+		2F6359B5264D6C370028BF60 /* inscription */ = {
+			isa = PBXGroup;
+			children = (
+				2F6359B6264D6C4C0028BF60 /* SignUpViewController.swift */,
+			);
+			path = inscription;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +158,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6359B4264D67110028BF60 /* LoginViewController.swift in Sources */,
 				2F6359A3264D5D540028BF60 /* ViewController.swift in Sources */,
+				2F6359B7264D6C4C0028BF60 /* SignUpViewController.swift in Sources */,
 				2F6359A1264D5D540028BF60 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

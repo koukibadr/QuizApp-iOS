@@ -10,16 +10,36 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var LoginContainer: UIView!
+    @IBOutlet weak var SignupContainer: UIView!
+    
+    
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        SignupContainer.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
+    
+    @IBAction func onLoginClicked(_ sender: UIButton) {
+        SignupContainer.isHidden = true
+        LoginContainer.isHidden = false
+        loginButton.setTitleColor(UIColor.black, for: .normal)
+        signupButton.setTitleColor(UIColor.lightGray, for: .normal)
+    }
+    
+    @IBAction func onSignupClicked(_ sender: UIButton) {
+        SignupContainer.isHidden = false
+        LoginContainer.isHidden = true
+        loginButton.setTitleColor(UIColor.lightGray, for: .normal)
+        signupButton.setTitleColor(UIColor.black, for: .normal)
+    }
+    //686868
+    
 }
 
