@@ -115,7 +115,7 @@
         <!--Login View Controller-->
         <scene sceneID="sXA-aO-7vL">
             <objects>
-                <viewController id="AQN-Cz-6b3" customClass="LoginViewController" customModule="QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AQN-Cz-6b3" customClass="LoginViewController" customModule="QuizApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mhO-I6-tXn">
                         <rect key="frame" x="0.0" y="0.0" width="297" height="463"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,25 +132,36 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mot de passe oublié" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSV-BP-TFm">
-                                <rect key="frame" x="71" y="325" width="154" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sg3-pl-qfQ">
                                 <rect key="frame" x="87" y="287" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal" title="S'authentifier"/>
+                                <connections>
+                                    <action selector="onLoginClicked:" destination="AQN-Cz-6b3" eventType="touchUpInside" id="4C1-jU-vo5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zq5-h9-cdN">
+                                <rect key="frame" x="79" y="325" width="138" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Mot de passe oublié">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="passwordForgotten:" destination="AQN-Cz-6b3" eventType="touchUpInside" id="Zus-1N-ZXG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="SKs-0e-F9G"/>
                     </view>
+                    <connections>
+                        <outlet property="emailInput" destination="Jtz-rV-pic" id="TXF-dn-88s"/>
+                        <outlet property="passwordInput" destination="THF-Op-Bld" id="k1r-Mk-ETs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l7V-Mf-zol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -190,18 +201,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkb-hR-80X">
                                 <rect key="frame" x="87" y="401" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal" title="S'inscrire"/>
+                                <connections>
+                                    <action selector="onSignupClicked:" destination="ECN-I4-plX" eventType="touchUpInside" id="bl7-tw-3LD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="GEz-QE-PmI"/>
                     </view>
+                    <connections>
+                        <outlet property="emailInput" destination="X4h-r9-uAv" id="UrX-Qc-Jg8"/>
+                        <outlet property="nameInput" destination="JaA-ak-lLQ" id="tdb-cd-WtO"/>
+                        <outlet property="passwordInput" destination="YGp-4n-D3s" id="HV6-59-O6k"/>
+                        <outlet property="usernameInput" destination="RgA-j7-OF5" id="EJN-T9-lta"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qe-I5-8Ju" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
