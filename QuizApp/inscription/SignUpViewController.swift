@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
 
@@ -15,27 +16,43 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var usernameInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     
+    var ref: DatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        ref = Database.database().reference()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func onSignupClicked(_ sender: UIButton) {
-        let email = self.emailInput.text
-        let name = self.nameInput.text
-        let username = self.usernameInput.text
-        let password = self.passwordInput.text
-        
-        print(email)
-        print(name)
-        print(username)
-        print(password)
-        
+        let email: String = self.emailInput.text!
+        let name: String = self.nameInput.text!
+        let username: String = self.usernameInput.text!
+        let password: String = self.passwordInput.text!
+    
+        if(email.isEmpty || name.isEmpty || username.isEmpty || password.isEmpty){
+            let informationPopup = createErrorPopup(title: "Erreur", message: "Veuillez saisissez tout les champs",cancelButtonText: "Ok")
+            self.present(informationPopup, animated: false, completion: nil)
+        }else{
+            let loadingPopup = createLoadingPopup(title: "Inscription...", message: nil)
+            self.present(loadingPopup, animated: false, completion: nil)
+            
+            self.ref.child("users/\(email)\(password)").setValue(["username": username, "email": email, "name": name, "password": password])
+            setUserData(mail: email, password: password)
+            
+            loadingPopup.dismiss(animated: true, completion: nil)
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0, execute: {
+                //Navigate to home screen
+                let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomeView") as! HomeScreenViewController
+                self.present(nextViewController, animated:true, completion:nil)
+            })
+            
+            
+        }
     }
 }

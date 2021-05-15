@@ -14,7 +14,11 @@
 		2F6359AB264D5D550028BF60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F6359A9264D5D550028BF60 /* LaunchScreen.storyboard */; };
 		2F6359B4264D67110028BF60 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6359B3264D67110028BF60 /* LoginViewController.swift */; };
 		2F6359B7264D6C4C0028BF60 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6359B6264D6C4C0028BF60 /* SignUpViewController.swift */; };
-		2FAFBC472650118D002B0B3A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FAFBC462650118C002B0B3A /* GoogleService-Info.plist */; };
+		2FAFBC49265013C6002B0B3A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2FAFBC48265013C6002B0B3A /* GoogleService-Info.plist */; };
+		2FAFBC4D2650290E002B0B3A /* SharedPrefController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFBC4C2650290E002B0B3A /* SharedPrefController.swift */; };
+		2FAFBC502650297B002B0B3A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFBC4F2650297B002B0B3A /* Constants.swift */; };
+		2FAFBC5326502C57002B0B3A /* DialogFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFBC5226502C57002B0B3A /* DialogFactory.swift */; };
+		2FAFBC5726503039002B0B3A /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFBC5626503039002B0B3A /* HomeScreenViewController.swift */; };
 		4CF1224C5531D40B811577C7 /* Pods_QuizApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF0D996C74456675225DBC2 /* Pods_QuizApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +33,11 @@
 		2F6359AC264D5D550028BF60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F6359B3264D67110028BF60 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2F6359B6264D6C4C0028BF60 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
-		2FAFBC462650118C002B0B3A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2FAFBC48265013C6002B0B3A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2FAFBC4C2650290E002B0B3A /* SharedPrefController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPrefController.swift; sourceTree = "<group>"; };
+		2FAFBC4F2650297B002B0B3A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		2FAFBC5226502C57002B0B3A /* DialogFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogFactory.swift; sourceTree = "<group>"; };
+		2FAFBC5626503039002B0B3A /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		33909467A380229A3B0C6EF4 /* Pods-QuizApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizApp.release.xcconfig"; path = "Target Support Files/Pods-QuizApp/Pods-QuizApp.release.xcconfig"; sourceTree = "<group>"; };
 		8A1E801FE8E3EAEA98FBD6ED /* Pods-QuizApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizApp.debug.xcconfig"; path = "Target Support Files/Pods-QuizApp/Pods-QuizApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +83,10 @@
 		2F63599F264D5D540028BF60 /* QuizApp */ = {
 			isa = PBXGroup;
 			children = (
+				2FAFBC5526503026002B0B3A /* home */,
+				2FAFBC5126502C47002B0B3A /* utilities */,
+				2FAFBC4E26502967002B0B3A /* constants */,
+				2FAFBC4B265028DB002B0B3A /* data */,
 				2F6359B5264D6C370028BF60 /* inscription */,
 				2F6359B2264D66CF0028BF60 /* authentication */,
 				2F6359A0264D5D540028BF60 /* AppDelegate.swift */,
@@ -82,7 +94,7 @@
 				2F6359A4264D5D540028BF60 /* Main.storyboard */,
 				2F6359A7264D5D550028BF60 /* Assets.xcassets */,
 				2F6359A9264D5D550028BF60 /* LaunchScreen.storyboard */,
-				2FAFBC462650118C002B0B3A /* GoogleService-Info.plist */,
+				2FAFBC48265013C6002B0B3A /* GoogleService-Info.plist */,
 				2F6359AC264D5D550028BF60 /* Info.plist */,
 			);
 			path = QuizApp;
@@ -102,6 +114,38 @@
 				2F6359B6264D6C4C0028BF60 /* SignUpViewController.swift */,
 			);
 			path = inscription;
+			sourceTree = "<group>";
+		};
+		2FAFBC4B265028DB002B0B3A /* data */ = {
+			isa = PBXGroup;
+			children = (
+				2FAFBC4C2650290E002B0B3A /* SharedPrefController.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		2FAFBC4E26502967002B0B3A /* constants */ = {
+			isa = PBXGroup;
+			children = (
+				2FAFBC4F2650297B002B0B3A /* Constants.swift */,
+			);
+			path = constants;
+			sourceTree = "<group>";
+		};
+		2FAFBC5126502C47002B0B3A /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2FAFBC5226502C57002B0B3A /* DialogFactory.swift */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		2FAFBC5526503026002B0B3A /* home */ = {
+			isa = PBXGroup;
+			children = (
+				2FAFBC5626503039002B0B3A /* HomeScreenViewController.swift */,
+			);
+			path = home;
 			sourceTree = "<group>";
 		};
 		4C9803F9BDD198B0955C5024 /* Pods */ = {
@@ -175,7 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F6359AB264D5D550028BF60 /* LaunchScreen.storyboard in Resources */,
-				2FAFBC472650118D002B0B3A /* GoogleService-Info.plist in Resources */,
+				2FAFBC49265013C6002B0B3A /* GoogleService-Info.plist in Resources */,
 				2F6359A8264D5D550028BF60 /* Assets.xcassets in Resources */,
 				2F6359A6264D5D540028BF60 /* Main.storyboard in Resources */,
 			);
@@ -241,10 +285,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FAFBC5326502C57002B0B3A /* DialogFactory.swift in Sources */,
+				2FAFBC5726503039002B0B3A /* HomeScreenViewController.swift in Sources */,
 				2F6359B4264D67110028BF60 /* LoginViewController.swift in Sources */,
 				2F6359A3264D5D540028BF60 /* ViewController.swift in Sources */,
 				2F6359B7264D6C4C0028BF60 /* SignUpViewController.swift in Sources */,
 				2F6359A1264D5D540028BF60 /* AppDelegate.swift in Sources */,
+				2FAFBC4D2650290E002B0B3A /* SharedPrefController.swift in Sources */,
+				2FAFBC502650297B002B0B3A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if getUserMail() != nil{
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "HomeView")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }else{
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "AuthScreen")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
+        
         return true
     }
 
