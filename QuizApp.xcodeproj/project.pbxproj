@@ -19,7 +19,11 @@
 		2FAFBC502650297B002B0B3A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFBC4F2650297B002B0B3A /* Constants.swift */; };
 		2FAFBC5326502C57002B0B3A /* DialogFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFBC5226502C57002B0B3A /* DialogFactory.swift */; };
 		2FAFBC5726503039002B0B3A /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFBC5626503039002B0B3A /* HomeScreenViewController.swift */; };
+		2FE8D7BC265153EA00BAA47A /* QuestionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE8D7BB265153EA00BAA47A /* QuestionViewCell.swift */; };
+		2FE8D7BF265155AD00BAA47A /* QuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE8D7BE265155AD00BAA47A /* QuestionResponse.swift */; };
+		2FE8D7C1265155C000BAA47A /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE8D7C0265155C000BAA47A /* Question.swift */; };
 		2FF6E2DC2651174C004F3804 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF6E2DB2651174C004F3804 /* QuizViewController.swift */; };
+		2FF6E2DF265120E4004F3804 /* NetworkAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF6E2DE265120E4004F3804 /* NetworkAdapter.swift */; };
 		4CF1224C5531D40B811577C7 /* Pods_QuizApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF0D996C74456675225DBC2 /* Pods_QuizApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +43,11 @@
 		2FAFBC4F2650297B002B0B3A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2FAFBC5226502C57002B0B3A /* DialogFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogFactory.swift; sourceTree = "<group>"; };
 		2FAFBC5626503039002B0B3A /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		2FE8D7BB265153EA00BAA47A /* QuestionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewCell.swift; sourceTree = "<group>"; };
+		2FE8D7BE265155AD00BAA47A /* QuestionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionResponse.swift; sourceTree = "<group>"; };
+		2FE8D7C0265155C000BAA47A /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		2FF6E2DB2651174C004F3804 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		2FF6E2DE265120E4004F3804 /* NetworkAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAdapter.swift; sourceTree = "<group>"; };
 		33909467A380229A3B0C6EF4 /* Pods-QuizApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizApp.release.xcconfig"; path = "Target Support Files/Pods-QuizApp/Pods-QuizApp.release.xcconfig"; sourceTree = "<group>"; };
 		8A1E801FE8E3EAEA98FBD6ED /* Pods-QuizApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizApp.debug.xcconfig"; path = "Target Support Files/Pods-QuizApp/Pods-QuizApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,6 +130,8 @@
 		2FAFBC4B265028DB002B0B3A /* data */ = {
 			isa = PBXGroup;
 			children = (
+				2FE8D7BD2651559900BAA47A /* entities */,
+				2FF6E2DD265120BC004F3804 /* network */,
 				2FAFBC4C2650290E002B0B3A /* SharedPrefController.swift */,
 			);
 			path = data;
@@ -151,12 +161,30 @@
 			path = home;
 			sourceTree = "<group>";
 		};
+		2FE8D7BD2651559900BAA47A /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				2FE8D7BE265155AD00BAA47A /* QuestionResponse.swift */,
+				2FE8D7C0265155C000BAA47A /* Question.swift */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
 		2FF6E2DA26511724004F3804 /* quiz */ = {
 			isa = PBXGroup;
 			children = (
 				2FF6E2DB2651174C004F3804 /* QuizViewController.swift */,
+				2FE8D7BB265153EA00BAA47A /* QuestionViewCell.swift */,
 			);
 			path = quiz;
+			sourceTree = "<group>";
+		};
+		2FF6E2DD265120BC004F3804 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				2FF6E2DE265120E4004F3804 /* NetworkAdapter.swift */,
+			);
+			path = network;
 			sourceTree = "<group>";
 		};
 		4C9803F9BDD198B0955C5024 /* Pods */ = {
@@ -264,22 +292,26 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-QuizApp/Pods-QuizApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCoreDiagnostics/FirebaseCoreDiagnostics.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseDatabase/FirebaseDatabase.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreDiagnostics.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseDatabase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -296,11 +328,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FE8D7BF265155AD00BAA47A /* QuestionResponse.swift in Sources */,
 				2FAFBC5326502C57002B0B3A /* DialogFactory.swift in Sources */,
 				2FAFBC5726503039002B0B3A /* HomeScreenViewController.swift in Sources */,
 				2F6359B4264D67110028BF60 /* LoginViewController.swift in Sources */,
+				2FE8D7BC265153EA00BAA47A /* QuestionViewCell.swift in Sources */,
 				2F6359A3264D5D540028BF60 /* ViewController.swift in Sources */,
+				2FF6E2DF265120E4004F3804 /* NetworkAdapter.swift in Sources */,
 				2F6359B7264D6C4C0028BF60 /* SignUpViewController.swift in Sources */,
+				2FE8D7C1265155C000BAA47A /* Question.swift in Sources */,
 				2F6359A1264D5D540028BF60 /* AppDelegate.swift in Sources */,
 				2FF6E2DC2651174C004F3804 /* QuizViewController.swift in Sources */,
 				2FAFBC4D2650290E002B0B3A /* SharedPrefController.swift in Sources */,
