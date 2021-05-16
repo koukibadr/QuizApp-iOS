@@ -20,6 +20,13 @@ func setUserData(mail: String, password: String){
     defaults.synchronize()
 }
 
+func clearUserData(){
+    let defaults = getStorage()
+    defaults.removeObject(forKey: SharedKeys.userMail)
+    defaults.removeObject(forKey: SharedKeys.userPassword)
+    defaults.synchronize()
+}
+
 func getUserMail() -> String? {
     let defaults = getStorage()
     let mail = defaults.string(forKey: SharedKeys.userMail)
