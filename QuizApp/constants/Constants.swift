@@ -12,3 +12,8 @@ struct SharedKeys {
     static let userMail = "user_mail"
     static let userPassword = "user_password"
 }
+
+let MUSIC_CATEGORY_ID = 12
+let SPORT_CATEGORY_ID = 21
+let MOVIES_CATEGORY_ID = 11
+let GEO_CATEGORY_ID = 22
